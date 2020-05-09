@@ -1,0 +1,52 @@
+# Imports time module
+import time
+
+
+# Function to print statement and pause briefly
+def print_pause(input):
+    print(input)
+    time.sleep(0.5)
+
+    
+# Prints out intro text
+def intro():
+    print_pause('You have just arrived at your new job.')
+    print_pause('You are in the elevator.')
+
+    
+# Prompts a choice of which floor to choose
+def where_to():
+    choices = ['1. Lobby', '2. Human resources', '3. Engineering department']
+    print('1. Lobby \n2. Human resources \n3. Engineering department')
+    floor = input()       
+    if '1' in input:
+        print_pause("You push the button for the first floor.")       
+        print_pause("After a few moments, you find yourself in the lobby.")
+    if '2' in floor:
+        print_pause("You push the button for the second floor.")
+        print_pause("After a few moments, you find yourself in the human resources department.")
+    if '3' in floor:
+        print_pause("You push the button for the third floor.")
+        print_pause("After a few moments, you find yourself in the engineering department.") 
+    else:
+        print_pause("Sorry, I don't understand.")
+ 
+
+# Prompts a choice of which floor to choose next
+def where_next():
+    while True:        
+        print_pause("Where would you like to go next?") 
+        where_to()
+
+        
+# Bringing it together. Function calls the Intro, and prompts choice of floor choice and subsequesnt floor choices
+def floor():  
+    intro()
+    while True:    
+        print_pause('Please enter the number for the floor you would like to visit:')
+        where_to()
+        where_next()        
+                     
+
+floor()
+    
